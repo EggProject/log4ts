@@ -1,0 +1,47 @@
+{
+  "name": "@eggproject/log4ts",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "rimraf dist && rimraf dist-worker && webpack --config worker/webpack.config.worker.js && rollup -c",
+    "build-dev": "rimraf dist && rimraf dist-worker && webpack --config worker/webpack.config.dev-worker.js && rollup -c",
+    "watch": "rollup -cw",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EggProject/log4ts.git"
+  },
+  "author": "eggp",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EggProject/log4ts/issues"
+  },
+  "homepage": "https://github.com/EggProject/log4ts#readme",
+  "devDependencies": {
+    "@angular/compiler": "^7.2.12",
+    "@angular/compiler-cli": "^7.2.12",
+    "@angular/core": "^7.2.12",
+    "@ngtools/webpack": "^7.3.8",
+    "prettier": "1.16.4",
+    "rollup": "^1.9.0",
+    "rollup-plugin-typescript2": "^0.20.1",
+    "tslint": "^5.15.0",
+    "tslint-config-prettier": "1.18.0",
+    "typescript": "3.2.2",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-merge": "^4.2.1"
+  },
+  "dependencies": {
+    "rimraf": "^2.6.3",
+    "rxjs": "^6.4.0"
+  }
+}
